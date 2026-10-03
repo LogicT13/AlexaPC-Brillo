@@ -1,0 +1,35 @@
+{
+  "FAUXMO": {
+    "ip_address": "auto"
+  },
+  "PLUGINS": {
+    "SimpleHTTPPlugin": {
+      "DEVICES": [
+        {
+          "name": "Monitor Secundario",
+          "port": 52810,
+          "on_cmd": "http://127.0.0.1:52800/on",
+          "off_cmd": "http://127.0.0.1:52800/off",
+          "state_cmd": "http://127.0.0.1:52800/state",
+          "state_response_on": "blackout",
+          "state_response_off": "off",
+          "use_fake_state": false,
+          "method": "GET",
+          "timeout": 5
+        },
+        {
+          "name": "Monitor Atenuado",
+          "port": 52811,
+          "on_cmd": "http://127.0.0.1:52800/dim",
+          "off_cmd": "http://127.0.0.1:52800/off",
+          "state_cmd": "http://127.0.0.1:52800/state",
+          "state_response_on": "dim",
+          "state_response_off": "off",
+          "use_fake_state": false,
+          "method": "GET",
+          "timeout": 5
+        }
+      ]
+    }
+  }
+}
